@@ -55,7 +55,7 @@
         {% for item in items %}
             <tr>
             {% for key in keys %}
-                <td>{{ item.key }}</td>
+                <td>{{ item[key] }}</td>
             {% endfor %}
             </tr>
         {% endfor %}
