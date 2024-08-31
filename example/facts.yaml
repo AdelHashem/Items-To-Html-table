@@ -13,12 +13,11 @@
 
     - name: send email
       ansible.builtin.mail:
-        host: smtp.example.com
-        port: 587
-        username: adel
-        password: password
+        host: smtp.freesmtpservers.com
+        port: 25
+        from: ansible-playbook@testing.com
         to:
-          - mail@example.com
+          - adelhashem@testing.com
         subject: "Facts Report"
         body: "{{ list_of_facts | items_to_html(title='report',ansible_hostname='Host Name', ansible_distribution='Distribution') }}"
         subtype: html
