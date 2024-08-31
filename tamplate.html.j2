@@ -46,19 +46,19 @@
     <table>
         <thead>
             <tr>
-                <th>Host</th>
-                <th>Days</th>
-                <th>Hours</th>
-                <th>Min</th>
+            {% for i in header %}
+                <th>{{ i }}</th>
+            {% endfor %}
             </tr>
         </thead>
         <tbody>
+        {% for item in items %}
             <tr>
-                <td>Machine 1</td>
-                <td>10</td>
-                <td>5</td>
-                <td>30</td>
+            {% for key in keys %}
+                <td>{{ item.key }}</td>
+            {% endfor %}
             </tr>
+        {% endfor %}
         </tbody>
     </table>
 </body>
