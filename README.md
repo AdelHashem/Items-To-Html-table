@@ -51,6 +51,7 @@ This Ansible filter plugin allows you to generate an HTML table from a list of d
 - Additional key-value pairs: Specify which keys to include in the table and optionally rename them. By default, the filter will include all keys with their original names.
 
 ## Example
+![image](https://github.com/user-attachments/assets/2d766d50-c134-4f55-9942-b4dd6fb944f7)
 
 In the example above:
 - The playbook gathers facts from all hosts.
