@@ -1,0 +1,25 @@
+---
+- name: gather facts
+  hosts: all
+  gather_facts: true
+  vars:
+    list_of_facts: "{{ ansible_play_hosts | map('extract', hostvars) | list }}"
+  tasks:
+    - name: create table of some keys 
+      ansible.builtin.copy:
+        content: "{{ list_of_facts | items_to_html(title='report',ansible_hostname='Host Name', ansible_distribution='Distribution') }}"
+        dest: facts_report.html
+      run_once: true
+
+    - name: send email
+      ansible.builtin.mail:
+        host: smtp.example.com
+        port: 587
+        username: adel
+        password: password
+        to:
+          - mail@example.com
+        subject: "Facts Report"
+        body: "{{ list_of_facts | items_to_html(title='report',ansible_hostname='Host Name', ansible_distribution='Distribution') }}"
+        subtype: html
+      run_once: true
