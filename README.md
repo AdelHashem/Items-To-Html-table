@@ -13,7 +13,7 @@ This Ansible filter plugin allows you to generate an HTML table from a list of d
 ## How to Use
 
 1. **Copy the Plugin**  
-   Copy `itemstohtml.py` to your filter directory, typically located at `/usr/share/ansible/plugins/filter`.
+   Copy `itemstohtml.py` to your filter directory, typically located at `/usr/share/ansible/plugins/filter` (Default path).
 
 2. **Usage in Playbook**  
    Here's an example of how to use the plugin in an Ansible playbook:
